@@ -1,0 +1,129 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>YoutubeMP3</title>
+    <style>
+      body {
+        background: rgb(20,106,255);
+        background: linear-gradient(339deg, rgba(20,106,255,1) 0%, rgba(209,69,87,1) 100%);
+        font-size: 16px;
+      }
+      
+      div.container {
+        display: block;
+        margin: auto;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5em;
+        align-items: center;
+      }
+
+      div#logo {
+        font-family: 'Roboto Mono', monospace;
+        text-align: center;
+        font-size: 3em;
+        padding: 0.3em;
+        width: fit-content;
+      }
+
+      div.wrapper {
+        margin-bottom: 0.75em;
+      }
+
+      h1 {
+        margin: 0;
+      }
+
+      form, div.wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5em;
+        background: #e3e3e3;
+        border-radius: 5px;
+        padding: 1em;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.2em;
+        box-shadow: 0 0 5px 2px #2e2e2e;
+      }
+
+      label {
+        display: flex;
+        flex-direction: row;
+        flex: 0 0 fit-content;
+        gap: 0.3em;
+      }
+
+      input {
+        flex: 1 1 100%;
+      }
+
+      button, a {
+        background: rgb(57,0,99);
+        background: linear-gradient(344deg, rgba(57,0,99,1) 0%, rgba(45,200,165,1) 100%);
+        color: white;
+        inset: 0;
+        border: 0;
+        padding: 0.3em;
+        border-radius: 5px;
+        font-size: 1em;
+        box-shadow: 2px 2px 0 0 black;
+        position: relative;
+        cursor: pointer;
+        display: block;
+        text-decoration: none;
+      }
+
+      button:hover, a:hover {
+        color: #e3e3e3;
+      }
+
+      button:active, a:active {
+        top: 2px;
+        left: 2px;
+        box-shadow: unset;
+        color: #e3e3e3;
+      }
+
+      div#download {
+         display: none;
+      }
+    </style>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@1,700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container">
+      <div id="logo" class="wrapper">
+        <h1>YoutubeMP3</h1>
+      </div>
+      <form action="./api/request" method="post" onsubmit="event.preventDefault(); onSubmit();" class="wrapper">
+        <label>
+          <span>Url:</span><input id="url" type="text" name="url"/>
+        </label>
+        <button type="submit">Request download</button>
+      </form>
+      <div id="download" class="wrapper">
+
+      </div>
+    </div>
+    <div id="cookie" class="container">
+      <form onsubmit="event.preventDefault(); saveCookie();" class="wrapper">
+        <label>
+          <span>Name:</span><input id="name" type="text" name="name"/>
+        </label>
+        <label>
+          <span>Value:</span><input id="value" type="text" name="value"/>
+        </label>
+        <button type="submit">Save</button>
+      </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+    <script src="./core.js"></script>
+  </body>
+</html>

@@ -13,7 +13,7 @@ const cron = require('node-cron')
 // Constants
 const PORT = 8080
 const HOST = "0.0.0.0"
-const COOKIE = "0Jt@$VR%FFs@BMy4beIq!eW2LYn2mQ&QnT48K4wVHj0D2N1a9hMF8ZrVP!imZpTM5pNNSN^P*LE*775E1y0aVAhlrKklb^8QM&7O1uyTDqLLBXl$Y$^WpYECMp#fTq6G"
+const COOKIE = process.env.SECRET
 
 // DB
 let db;
